@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qr_code_scanner/screens/scan_qr.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class _HomePageState extends State<HomePage> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.orange,
         elevation: 0,
       ),
       body: Container(
@@ -31,7 +32,10 @@ class _HomePageState extends State<HomePage> {
             ),
             FlatButton(
               padding: EdgeInsets.all(15),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => ScanQR()));
+              },
               child: Text(
                 'Scan QR code',
                 style: TextStyle(
@@ -42,7 +46,7 @@ class _HomePageState extends State<HomePage> {
               ),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
-                  side: BorderSide(color: Colors.green.shade700)),
+                  side: BorderSide(color: Colors.orange)),
             ),
             SizedBox(
               height: 20,
@@ -60,7 +64,7 @@ class _HomePageState extends State<HomePage> {
               ),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
-                  side: BorderSide(color: Colors.green.shade700)),
+                  side: BorderSide(color: Colors.orange)),
             ),
           ],
         ),
