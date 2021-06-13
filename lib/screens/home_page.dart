@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qr_code_scanner/screens/generate_qr.dart';
 import 'package:qr_code_scanner/screens/scan_qr.dart';
 
 class HomePage extends StatefulWidget {
@@ -53,7 +54,10 @@ class _HomePageState extends State<HomePage> {
             ),
             FlatButton(
               padding: EdgeInsets.all(15),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => GenerateScreen()));
+              },
               child: Text(
                 'Generate QR code',
                 style: TextStyle(
